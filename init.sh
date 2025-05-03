@@ -2,21 +2,21 @@
 
 OS=$(uname -s)
 case $OS in
-    "Linux")
-        PLATFORM="Linux"
-        ;;
-    "Darwin")
-        PLATFORM="MacOS"
-        ;;
-    "MINGW"*|"CYGWIN"*|"MSYS"*)
-        PLATFORM="Windows"
-        ;;
-    *)
-        PLATFORM="Unknown"
-        ;;
+"Linux")
+    PLATFORM="Linux"
+    ;;
+"Darwin")
+    PLATFORM="MacOS"
+    ;;
+"MINGW"* | "CYGWIN"* | "MSYS"*)
+    PLATFORM="Windows"
+    ;;
+*)
+    PLATFORM="Unknown"
+    ;;
 esac
 
-if ! command -v uv &> /dev/null; then
+if ! command -v uv &>/dev/null; then
     echo -e "\033[33m检测到未安装uv，正在安装...\033[0m"
 
     if [ "Windows" = "$PLATFORM" ]; then
@@ -60,9 +60,9 @@ echo -e "\033[32m正在验证 Manim 安装...\033[0m"
 TEST_VALUE=""
 for arg in "$@"; do
     case $arg in
-        test=*)
-            TEST_VALUE="${arg#test=}"  # 提取等号后的内容
-            ;;
+    test=*)
+        TEST_VALUE="${arg#test=}" # 提取等号后的内容
+        ;;
     esac
 done
 if [ -n "$TEST_VALUE" ]; then

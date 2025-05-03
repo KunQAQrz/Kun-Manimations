@@ -1,8 +1,9 @@
 from manim import *
 
+
 class SubScene(Scene):
     @staticmethod
-    def construct_for_other(scene:Scene):
+    def construct_for_other(scene: Scene):
         pass
 
     def construct(self):

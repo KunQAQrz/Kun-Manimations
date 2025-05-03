@@ -74,6 +74,10 @@ fi
 
 if [ $? -ne 0 ]; then
     echo -e "\033[31mManim 安装验证失败!\033[0m"
+
+    echo -e "\033[33m请确保 FFmpeg 已正确安装，并在 PATH 中。\033[0m"
+    echo -e "下载地址：https://ffmpeg.org/download.html 。"
+
     echo -e "\033[33m请确保 LaTeX 已正确安装，并在 PATH 中。\033[0m"
     if [ "Windows" = "$PLATFORM" ]; then
         echo -e "下载地址：https://miktex.org/download 。"

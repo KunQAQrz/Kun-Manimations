@@ -62,24 +62,24 @@ sh init.sh test=yes
 manim -pql --renderer=opengl src/scenes.py Main
 ```
 
-> 如果使用的是 VS Code 编辑器，由于已经配置了 launch，可以按 F5 执行以上命令进行预览。
+> 如果使用的是 VS Code 编辑器，由于已经配置在 .vscode/launch.json 中，所以可以按 F5 执行以上命令进行预览或调试代码。
 
 #### 生成视频并预览：
 
 ```cmd
-manim -p --write_to_movie --renderer=opengl --format=mp4 src/scenes.py Main
+manim -p --write_to_movie --format=mp4 src/scenes.py Main
 ```
 
 #### 生成动图并预览：
 
 ```cmd
-manim -p --write_to_movie --renderer=opengl --format=gif --fps=50 src/scenes.py Main
+manim -p --write_to_movie --format=gif --fps=50 src/scenes.py Main
 ```
 
 #### 生成最后一帧的图片并预览：
 
 ```cmd
-manim -p --write_to_movie --renderer=opengl --format=png -s src/scenes.py Main
+manim -p --write_to_movie --format=png -s src/scenes.py Main
 ```
 
 > 注意：`Main` 可以更改为其他场景名称，例如：`MyRotations`。
@@ -92,6 +92,6 @@ manim -p --write_to_movie --renderer=opengl --format=png -s src/scenes.py Main
 
 - [Manim Sideview](https://marketplace.visualstudio.com/items?itemName=Rickaym.manim-sideview)
   - 可以按 `F1` 打开命令面板，输入 `Manim: Open Mobject Gallery` 打开侧视图，方便查看和生成图案。
-  - 可以按右上角菜单 `Manim: Runs a Sideview` 打开侧视图，方便预览场景。(不过现阶段该功能只能生成 1080P 60 帧的 mp4 文件后才能预览，速度远不如`场景快速预览`的命令快)
+  - 可以按右上角菜单 `Manim: Runs a Sideview` 打开侧视图，方便预览场景。(不过现阶段该功能只能生成 1080P 60 帧的 mp4 文件后才能预览，速度不如`场景快速预览`的命令快)
 
 > 关于如何使用请阅读 [manim 社区版快速入门](https://docs.manim.community/en/stable/tutorials/quickstart.html)

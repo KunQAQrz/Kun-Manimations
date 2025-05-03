@@ -2,5 +2,5 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "manim-sideview.commandLineArgs": "-c ../manim.cfg --write_to_movie --renderer=opengl -qh --format=mp4"
+  "manim-sideview.commandLineArgs": "-c ../manim.cfg --write_to_movie -qh --format=mp4"
 }

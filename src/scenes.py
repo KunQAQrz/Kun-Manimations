@@ -3,6 +3,7 @@ from manim import *
 from helper import *
 
 from patterns.array import Array
+from patterns.linked_list import LinkedList
 
 
 class ArrayAndLinkedList(SubScene):
@@ -31,6 +32,16 @@ class ArrayAndLinkedList(SubScene):
 
     def construct(self):
         self.__array()
+
+        self.wait()
+        self.clear()
+
+        slist = LinkedList(15)
+
+        for i in range(15):
+            self.play(
+                *slist.animate_append(str(i), run_time=0.5),
+            )
 
         self.wait()
 

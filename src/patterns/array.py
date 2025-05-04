@@ -2,6 +2,8 @@ from manim import *
 
 
 class Array(VGroup):
+    """数组可视化组件"""
+
     def _create_label(self) -> Text:
         """创建容量标签"""
         return Text(

@@ -38,18 +38,23 @@ class Array(VGroup):
         # 生成数组元素
         self.elements = VGroup()
         for i in range(capacity):
-            # 创建元素方块
             rect = Rectangle(
                 height=element_width,
                 width=element_width,
-                color=self.element_color if i < size else self.empty_color,
+                color=self.empty_color,
                 fill_opacity=0.5,
             )
 
+            if i < size:
+                rect.set_color(self.element_color)
+                rect.set_z_index(1)
+
             # 添加索引标签
             index_text = (
-                Text(str(i), font_size=20).move_to(rect.get_center()).set_z_index(1)
+                Text(str(i), font_size=20).move_to(rect.get_center()).set_z_index(2)
             )
+
+            """层级：索引标签 > 元素 > 空元素"""
 
             # 组合元素和索引
             element_group = VGroup(rect, index_text)
@@ -78,9 +83,7 @@ class Array(VGroup):
             target_color = self.element_color if i < new_size else self.empty_color
             if rect.fill_color != target_color:
                 elements_anim.append(
-                    rect.animate()
-                    .set_fill(target_color, opacity=0.5)
-                    .set_stroke(target_color)
+                    rect.animate().set_color(target_color).set_fill(opacity=0.5)
                 )
 
         # 生成标签更新动画
